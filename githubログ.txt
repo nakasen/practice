@@ -1,0 +1,74 @@
+Last login: Sun Nov 23 17:28:25 on ttys000
+-bash: rbenv: command not found
+takashi-no-MacBook-Air-3:~ takashiyamaguchi$ cd /Users/takashiyamaguchi/Dropbox/Candle/github 
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ touch README.md
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ git init
+Initialized empty Git repository in /Users/takashiyamaguchi/Dropbox/Candle/github/.git/
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ git add README.md
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ git commit -m "first commit"
+[master (root-commit) 55f74ff] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ git remote add origin https://github.com/candlegithub/practice.git
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ git push -u origin master
+remote: Permission to candlegithub/practice.git denied to 0628.
+fatal: unable to access 'https://github.com/candlegithub/practice.git/': The requested URL returned error: 403
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ ls
+README.md	a.txt
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ ls -a
+.		..		.git		README.md	a.txt
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ vi .git
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ vi .git/config 
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ vi .git/config 
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ git push -u origin master
+The authenticity of host 'github.com (192.30.252.131)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? no
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ ssh-keygen -t rsa -C "yamaguchi0628@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/takashiyamaguchi/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/takashiyamaguchi/.ssh/id_rsa.
+Your public key has been saved in /Users/takashiyamaguchi/.ssh/id_rsa.pub.
+The key fingerprint is:
+4f:87:f6:bb:98:08:78:df:53:9c:0b:bf:a5:bc:94:28 yamaguchi0628@gmail.com
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|                 |
+|                 |
+|           .     |
+|        S +...   |
+|     .   +.++.   |
+|    . o E o++..  |
+|     . o +.=o+   |
+|        o +.B+   |
++-----------------+
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwB3Gp0kOdbhEjozokhyLoohIFkXFuzQhmQYNiIBdgWMXz9+Dax7Yj2qmtc3pmPAWukRELI5tdm3snGD4KWFjQsHCUi9uYV0XQ4hzh7v3j+Q/bz5/Rz0cNZjX1AGgP+ocguXpeMp6Cwst/8AhKNW+aooIKvO0vbhjXWDm01ruvj4rEJceXzgSCbkA5ES9SNUP6aY8Yyygwe+lkNFc+VYw/mjKuJ3I4SJ0qJK7WuL/KvPyny9eiNvdzSf9qchIVF4smOz2BjkhCb9Y049j4PdeH3XZUMZ0RgSoWX0i5LprE4G0FjBDbAFjP6Q7SyBDCaDnU1Q2QoNyiTnq1ZSx+BCc3 yamaguchi0628@gmail.com
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ git push -u origin master
+The authenticity of host 'github.com (192.30.252.128)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes 
+Warning: Permanently added 'github.com,192.30.252.128' (RSA) to the list of known hosts.
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 213 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To ssh://git@github.com/candlegithub/practice.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+takashi-no-MacBook-Air-3:github takashiyamaguchi$ 
